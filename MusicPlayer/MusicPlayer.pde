@@ -18,4 +18,16 @@ void setup() {
   song1.play();
 }
 
-void draw() {}//End draw()
+void draw() {
+}//End draw()
+
+void keyPressed() {
+
+  if ( key == 'p' || key == 'P' ) {//Play-Pause Button
+    if ( song1.isPlaying() ) {
+      //Pause
+    } else {
+      //Play
+    }
+  }//Play-Pause Button
+}// End keyPressed()
