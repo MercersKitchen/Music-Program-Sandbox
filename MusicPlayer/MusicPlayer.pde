@@ -33,7 +33,18 @@ void keyPressed() {
     }
   }//End of Play-Pause Button
   //
-  if () {//Stop Button
-  }//End of Stop Button
+  if (key == 's' || key == 'S') {//Stop Button
+    if ( song1.isPlaying() ) {
+      song1.pause();
+      song1.rewind();
+    } else if ( song1.position() == song1.length() ) {//.legnth() = end
+      song1.rewind();
+    } else { //Song is not playing
+      song1.rewind();
+    }
+  }// End Stop Button
+  //
+  if ( key == 'f' || key == 'F') song1.skip(1000); // skip forward 1 second (1000 milliseconds)
+  if ( key == 'r' || key == 'R') song1.skip(-1000); // skip backward 1 second (1000 milliseconds)
   //
 }// End keyPressed()
