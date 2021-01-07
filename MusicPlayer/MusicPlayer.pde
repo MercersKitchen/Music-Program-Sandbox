@@ -48,3 +48,5 @@ void keyPressed() {
   if ( key == 'r' || key == 'R') song1.skip(-1000); // skip backward 1 second (1000 milliseconds)
   //
 }// End keyPressed()
+//
+void mousePressed() {}//End mousePressed()
