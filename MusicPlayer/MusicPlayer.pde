@@ -10,6 +10,7 @@ import ddf.minim.ugens.*;
 // Global Variables
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
+int loopIntNum = 1; //Able to connect this variable to buttons, increasing the loop number //loopIntNum+1 //loopIntNum+=
 
 void setup() {
   size(500, 400); //fullScreen(), displayWidth & displayHeight, leads to ScreenChecker()
@@ -46,6 +47,8 @@ void keyPressed() {
   //
   if ( key == 'f' || key == 'F') song1.skip(1000); // skip forward 1 second (1000 milliseconds)
   if ( key == 'r' || key == 'R') song1.skip(-1000); // skip backward 1 second (1000 milliseconds)
+  //
+  if ( key == 'l' || key =='L' ) song1.loop(loopIntNum); //Loop Button
   //
 }// End keyPressed()
 //
