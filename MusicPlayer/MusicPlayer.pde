@@ -63,31 +63,31 @@ void draw() {
 void keyPressed() {
   //
   if ( key == 'p' || key == 'P' ) {//Play-Pause Button
-    if ( song1.isPlaying() ) {
-      song1.pause();
-    } else if ( song1.position() == song1.length() ) {//.legnth() = end
-      song1.rewind();
-      song1.play();
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+    } else if ( song[currentSong].position() == song[currentSong].length() ) {//.legnth() = end
+      song[currentSong].rewind();
+      song[currentSong].play();
     } else {
-      song1.play();
+      song[currentSong].play();
     }
   }//End of Play-Pause Button
   //
   if (key == 's' || key == 'S') {//Stop Button
-    if ( song1.isPlaying() ) {
-      song1.pause();
-      song1.rewind();
-    } else if ( song1.position() == song1.length() ) {//.legnth() = end
-      song1.rewind();
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+    } else if ( song[currentSong].position() == song[currentSong].length() ) {//.legnth() = end
+      song[currentSong].rewind();
     } else { //Song is not playing
-      song1.rewind();
+      song[currentSong].rewind();
     }
   }// End Stop Button
   //
-  if ( key == 'f' || key == 'F') song1.skip(1000); // skip forward 1 second (1000 milliseconds)
-  if ( key == 'r' || key == 'R') song1.skip(-1000); // skip backward 1 second (1000 milliseconds)
+  if ( key == 'f' || key == 'F') song[currentSong].skip(1000); // skip forward 1 second (1000 milliseconds)
+  if ( key == 'r' || key == 'R') song[currentSong].skip(-1000); // skip backward 1 second (1000 milliseconds)
   //
-  if ( key == 'l' || key =='L' ) song1.loop(loopIntNum); //Loop Button
+  if ( key == 'l' || key =='L' ) song[currentSong].loop(loopIntNum); //Loop Button
   //
 }// End keyPressed()
 //
