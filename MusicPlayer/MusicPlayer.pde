@@ -89,6 +89,10 @@ void keyPressed() {
   //
   if ( key == 'l' || key =='L' ) song[currentSong].loop(loopIntNum); //Loop Button
   //
+  //Next Button
+  //
+  //Previous Button
+  //
 }// End keyPressed()
 //
 void mousePressed() {
