@@ -89,9 +89,23 @@ void keyPressed() {
   //
   if ( key == 'l' || key =='L' ) song[currentSong].loop(loopIntNum); //Loop Button
   //
-  //Next Button
+  //Next Button: 
+  if ( key == 'n' || key == 'N' ) {
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      currentSong++;
+      song[currentSong].play();
+    } else { 
+      song[currentSong].rewind();
+      currentSong++;
+    }
+  }//End Next Button
   //
-  //Previous Button
+  //Previous Button ("Backwards on Play List)
+  if (key == 'b' || key == 'B') {
+    currentSong--;
+  }//End Previous Button
   //
 }// End keyPressed()
 //
