@@ -10,12 +10,38 @@ import ddf.minim.ugens.*;
 // Global Variables
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
+AudioMetaData songMetaData1; 
 int loopIntNum = 1; //Able to connect this variable to buttons, increasing the loop number //loopIntNum+1 //loopIntNum+=
 
 void setup() {
   size(500, 400); //fullScreen(), displayWidth & displayHeight, leads to ScreenChecker()
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
   song1 = minim.loadFile("../Music/groove.mp3");  //able to pass absolute path, file name, and URL
+  songMetaData1 = song1.getMetaData(); 
+  //
+  println("Start of Console"); //Not seen, means output to console too long //Decrease println's or increase memory
+  println("Click the Console to Finish Starting this program"); //"Windows expects you to 'click into the window'
+  println("Press keyboard to test: P, etc.");
+  //
+  println("File Name: ", songMetaData1.fileName() );
+  println("Song Length (in milliseconds); ", songMetaData1.length() );
+  println("Song Length (in seconds): ", songMetaData1.length()/1000 );
+  println("Song Length ( in mintues and seconds): ", songMetaData1. );
+  println("Song Title: ", songMetaData1.title() );
+  println("Author: ", songMetaData1.author() );
+  println("Composer: ", songMetaData1.composer() );
+  println("Orchestra: ", songMetaData1.orchestra() );
+  println("Albums: ", songMetaData1.album() );
+  println("Disk: ", songMetaData1.disc() );
+  println("Publisher: ", songMetaData1.publisher() );
+  println("Date Release: ", songMetaData1.date() );
+  println("Copyright: ", songMetaData1.copyright() );
+  println("Comments: ", songMetaData1.comment() );
+  println("Lyrics: ", songMetaData1.lyrics() );
+  println("Track: ", songMetaData1.track() );
+  println("Genre: ", songMetaData1.genre() );
+  println("Encoded: ", songMetaData1.encoded() );
+  //
 }
 
 void draw() {
