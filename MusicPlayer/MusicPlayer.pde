@@ -94,11 +94,19 @@ void keyPressed() {
     if ( song[currentSong].isPlaying() ) {
       song[currentSong].pause();
       song[currentSong].rewind();
-      currentSong++;
+      if ( currentSong == numberOfSongs-1 ) {
+        currentSong = numberOfSongs - numberOfSongs;
+      } else {
+        currentSong++;
+      }
       song[currentSong].play();
     } else { 
       song[currentSong].rewind();
-      currentSong++;
+      if ( currentSong == numberOfSongs-1 ) {
+        currentSong = numberOfSongs - numberOfSongs;
+      } else {
+        currentSong++;
+      }
     }
   }//End Next Button
   //
