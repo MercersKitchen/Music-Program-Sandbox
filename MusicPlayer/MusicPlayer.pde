@@ -112,7 +112,23 @@ void keyPressed() {
   //
   //Previous Button ("Backwards on Play List)
   if (key == 'b' || key == 'B') {
-    currentSong--;
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - numberOfSongs ) {
+        currentSong = numberOfSongs-1;
+      } else {
+        currentSong--;
+      }
+      song[currentSong].play();
+    } else { 
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - numberOfSongs ) {
+        currentSong = numberOfSongs-1;
+      } else {
+        currentSong--;
+      }
+    }
   }//End Previous Button
   //
 }// End keyPressed()
